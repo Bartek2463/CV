@@ -11,17 +11,29 @@
     <!-- About-->
     <section class="resume-section" id="about">
         <div class="resume-section-content">
+            <c:forEach items="${about}" var="title">
+                <td>
+                    <a href='<c:url value="/editAbout/${title.id}"/> '
+                       class="btn-right btn btn-primary" role="button">Edytuj</a>
+                </td>
+                <td>
+                    <a href='<c:url value="/addAbout"/> '
+                       class="btn-right btn btn-info" role="button">Dodaj</a>
+                </td>
+                <tr>
             <h1 class="mb-0">
-                Clarence
-                <span class="text-primary">Taylor</span>
+
+                ${title.firstName}
+                <span class="text-primary">${title.lastName}</span>
             </h1>
             <div class="subheading mb-5">
-                3542 Berry Street · Cheyenne Wells, CO 80810 · (317) 585-8468 ·
-                <a href="mailto:name@email.com">name@email.com</a>
+                ${title.adres} · ${title.zipCode}, ${title.postOffice} · ${title.numberPhone} ·
+                <a href="mailto:name@email.com">${title.adresEmail}</a>
             </div>
-            <p class="lead mb-5">I am experienced in leveraging agile frameworks to provide a robust synopsis for high
-                level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the
-                overall value proposition.</p>
+            <p class="lead mb-5">${title.aboutPerson}.</p>
+                </tr>
+
+            </c:forEach>
             <div class="social-icons">
                 <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
                 <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
@@ -30,6 +42,8 @@
             </div>
         </div>
     </section>
+    <hr class="m-0" />
+
     <!-- Bootstrap core JS-->
        <%@include file="../dynamic/javaScript.jspf"%>
 </body>
