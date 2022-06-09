@@ -48,7 +48,8 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Początek Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="startJob" type="date" value="${experience.startJob}" >
+                                            <input class="form-control" name="startJob" value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${experience.startJob}"/>' type="date" placeholder="">
 
                                         </div>
                                     </div>
@@ -57,7 +58,8 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Koniec Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="endJob" type="date" value="${experience.endJob}">
+                                            <input class="form-control" name="endJob" value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${experience.endJob}"/>' type="date" placeholder="">
                                         </div>
                                     </div>
 
@@ -75,7 +77,10 @@
                             </div>
                         </div>
                     </div>
-                    <input class="btn btn-success pull-left" type="submit" value="Wyślij" id="searchButton"></input>
+                    <input class="btn btn-success pull-left" type="submit" value="Zapisz" id="searchButton"></input>
+                </form>
+                <form method="post" action='<c:url value="/deleteExperience/${experience.id}"/> '>
+                    <input class="btn btn-danger" type="submit" value="Usun">
                 </form>
 
 

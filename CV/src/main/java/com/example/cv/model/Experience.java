@@ -19,9 +19,9 @@ public class Experience {
     private String projectName;
     @Column(name = "DESCRIPTION_EXP")
     private String descriptionExp;
-    @DateTimeFormat(pattern = "yyyy-MM")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startJob;
-    @DateTimeFormat(pattern = "yyyy-MM")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endJob;
 
     @ManyToOne

@@ -58,8 +58,8 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Początek Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="startJob" type="date" max="3000-12-31"
-                                                   min="<fmt:formatDate pattern = "yyyy-MM-dd" value = "${now}"/>" placeholder="">
+                                            <input   class="form-control" name="startJob"  value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
                                         </div>
                                     </div>
 
@@ -68,7 +68,8 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Koniec Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="endJob" type="date">
+                                            <input  class="form-control" name="endJob"  value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
                                         </div>
                                     </div>
 

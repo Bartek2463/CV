@@ -30,6 +30,9 @@
             </div>
             </c:forEach>
     </section>
+    '<fmt:formatDate pattern = "yyyy-MM-dd"
+                     value = "${experience.endJob}"/>'
+
 
     <hr class="m-0"/>
 

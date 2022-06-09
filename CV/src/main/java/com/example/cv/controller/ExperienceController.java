@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -26,31 +27,43 @@ public class ExperienceController {
     }
 
     @GetMapping("/experience")
-    String getExpirence(Model model){
+    String getExpirence(Model model) {
         List<Experience> expirences = experienceService.getExpirence();
-        model.addAttribute("experiences",expirences);
+        model.addAttribute("experiences", expirences);
         return "experience/experience";
     }
 
 
     @GetMapping("/addExperience")
-    String getAddExperience(Model model){
+    String getAddExperience(Model model) {
         List<About> allAbouts = aboutService.getAllAbouts();
-        model.addAttribute("about",allAbouts);
+        model.addAttribute("about", allAbouts);
         return "experience/addExperience";
     }
+
     @PostMapping("/addExperience")
-    public RedirectView postAddExperience(Experience experience){
+    public RedirectView postAddExperience(Experience experience) {
         experienceService.addExpirence(experience);
         return new RedirectView("/experience");
     }
 
     @GetMapping("/editExperience/{id}")
-    public String getEditExperience(@PathVariable Long id,Model model){
+    public String getEditExperience(@PathVariable Long id, Model model) {
         Experience experienceByid = experienceService.getExperienceByid(id);
-        model.addAttribute("experience",experienceByid);
+        model.addAttribute("experience", experienceByid);
         return "experience/editExperience";
     }
 
+    @PostMapping("/editExperience/{id}")
+    public RedirectView postEditExperience(@Valid Experience experience, @PathVariable Long id) {
+        experienceService.editExperience(experience);
+        return new RedirectView("/experience");
+    }
+
+    @PostMapping("/deleteExperience/{id}")
+    public RedirectView deleteExperience(@PathVariable Long id) {
+        experienceService.deleteExperience(id);
+        return new RedirectView("/experience");
+    }
 
 }
