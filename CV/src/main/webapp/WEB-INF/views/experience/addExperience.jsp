@@ -16,7 +16,7 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/experience"/>'>
+                <form method="post" action='<c:url value="/addExperience"/>'>
                     <!-- Content Row -->
                     <select class="form-control" name="about.id">
                         <option hidden>wybierz</option>
@@ -52,14 +52,11 @@
                                         </div>
                                     </div>
 
-
-
-
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Początek Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input   class="form-control" name="startJob"  value='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${now}"/>' type="date" placeholder="">
+                                            <input   class="form-control" name="startJob"min="now"  max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date"  placeholder="">
                                         </div>
                                     </div>
 
@@ -68,8 +65,8 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Koniec Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input  class="form-control" name="endJob"  value='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${now}"/>' type="date" placeholder="">
+                                            <input  class="form-control" name="endJob" min="now"  max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" max="now" placeholder="">
                                         </div>
                                     </div>
 

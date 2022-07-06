@@ -19,11 +19,10 @@ public class Experience {
     private String projectName;
     @Column(name = "DESCRIPTION_EXP")
     private String descriptionExp;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd",iso = DateTimeFormat.ISO.DATE)
     private Date startJob;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd",iso = DateTimeFormat.ISO.DATE)
     private Date endJob;
-
     @ManyToOne
     private About about;
 
