@@ -74,7 +74,7 @@
                                         <label for="start" class="col-2 col-form-label">Opis Doświdczenia</label>
                                         <div class="col-10">
                                 <textarea class="form-control" rows="5" id="start" name="descriptionExp"
-                                          placeholder="napisz kilka słów o sobim doświadczeniu"></textarea>
+                                          placeholder="napisz kilka słów o swoim doświadczeniu"></textarea>
                                         </div>
                                     </div>
 
