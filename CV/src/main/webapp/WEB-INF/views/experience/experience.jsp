@@ -5,37 +5,38 @@
 <%@include file="../dynamic/css.jspf" %>
 
 <body id="page-top">
-<%@include file="../dynamic/navigationMain.jspf"%>
+<%@include file="../dynamic/navigationMain.jspf" %>
 <!-- Page Content-->
 <div class="container-fluid p-0">
     <section class="resume-section" id="experience">
         <div class="resume-section-content">
             <h2 class="mb-5">Experience</h2>
-                        <td>
+            <td>
                 <a href='<c:url value="/addExperience"/> '
                    class="btn-right btn btn-info" role="button">Dodaj</a>
             </td>
-
-
-            <c:forEach items ="${experiences}" var="title">
+            <c:forEach items="${experiences}" var="title">
                 <td>
                     <a href='<c:url value="/editExperience/${title.id}"/> '
                        class="btn-right btn btn-primary" role="button">Edytuj</a>
                 </td>
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="flex-grow-1">
-                    <h3 class="mb-0">${title.jobTitle}</h3>
-                    <div class="subheading mb-3">${title.projectName}</div>
-                    <p>${title.descriptionExp}</p>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">${title.jobTitle}</h3>
+                        <div class="subheading mb-3">${title.projectName}</div>
+                        <p>${title.descriptionExp}</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <span class="text-primary"><fmt:formatDate pattern="yyyy-MM"
+                                                                   value="${title.startJob}"/> - <fmt:formatDate
+                                pattern="yyyy-MM" value="${title.endJob}"/></span></div>
                 </div>
-                <div class="flex-shrink-0"><span class="text-primary">${title.startJob} - ${title.endJob}</span></div>
-            </div>
             </c:forEach>
-            </div>
+        </div>
     </section>
-    <hr class="m-0" />
+    <hr class="m-0"/>
 
     <!-- Bootstrap core JS-->
-    <%@include file="../dynamic/javaScript.jspf"%>
+    <%@include file="../dynamic/javaScript.jspf" %>
 </body>
 </html>

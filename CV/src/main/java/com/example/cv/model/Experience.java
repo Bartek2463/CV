@@ -19,11 +19,10 @@ public class Experience {
     private String projectName;
     @Column(name = "DESCRIPTION_EXP")
     private String descriptionExp;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd",iso = DateTimeFormat.ISO.DATE)
     private Date startJob;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd",iso = DateTimeFormat.ISO.DATE)
     private Date endJob;
-
     @ManyToOne
     private About about;
 
@@ -33,6 +32,7 @@ public class Experience {
     public Experience(Long id, String jobTitle, String companyName, String projectName, String descriptionExp,
                       Date startJob, Date endJob, About about) {
         this.id = id;
+
         this.jobTitle = jobTitle;
         this.companyName = companyName;
         this.projectName = projectName;
