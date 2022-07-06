@@ -32,6 +32,7 @@ public class Experience {
     public Experience(Long id, String jobTitle, String companyName, String projectName, String descriptionExp,
                       Date startJob, Date endJob, About about) {
         this.id = id;
+
         this.jobTitle = jobTitle;
         this.companyName = companyName;
         this.projectName = projectName;
