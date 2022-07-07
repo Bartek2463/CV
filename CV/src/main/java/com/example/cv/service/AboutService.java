@@ -2,18 +2,17 @@ package com.example.cv.service;
 
 import com.example.cv.model.About;
 import com.example.cv.repository.AboutRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class AboutService {
 
     private AboutRepository aboutRepository;
 
-    public AboutService(AboutRepository aboutRepository) {
-        this.aboutRepository = aboutRepository;
-    }
 
     public void adAbout(About about){
         aboutRepository.save(about);
