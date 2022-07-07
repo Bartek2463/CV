@@ -16,41 +16,47 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/editExperience/${experience.id}"/>'>
+                <form method="post" action='<c:url value="/add"/>'>
+                    <!-- Content Row -->
+                    <select class="form-control" name="about.id">
+                        <option hidden>wybierz</option>
+                        <c:forEach items="${about}" var="title">
+                            <option value="${title.id}">${title.firstName} ${title.lastName}</option>
+                        </c:forEach>
+                    </select>
 
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Nazwa Stanowiska</label>
+                                        <label class="col-2 col-form-label">Nazwa Szkoly</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="jobTitle"
-                                                   value="${experience.jobTitle}">
+                                            <input class="form-control" type="text" name="schoolName"
+                                                   placeholder="uzupełnij nazwe Szkoły">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Nazwa Firmy</label>
+                                        <label class="col-2 col-form-label">Nazwa Kierunku</label>
                                         <div class="col-10">
-                                            <input class="form-control" type="text" name="companyName"
-                                                   value="${experience.companyName}">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group row">
-                                        <label class="col-2 col-form-label">Nazwa Projektu</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="text" name="projectName"
-                                                   value="${experience.projectName}">
+                                            <input class="form-control" type="text" name="direction"
+                                                   placeholder="uzupełnij nazwę kierunku">
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Początek Daty zatrudnienia</label>
+                                        <label class="col-2 col-form-label">Nazwa Specjalizacji</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="startJob" min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${experience.startJob}"/>' type="date" placeholder="">
+                                            <input class="form-control" type="text" name="specialization"
+                                                   placeholder="uzupełnij nazwę Projektu">
+                                        </div>
+                                    </div>
 
+                                    <div class="form-group row">
+                                        <label class="col-2 col-form-label">Początek Daty rozpoczecia Szkoły</label>
+                                        <div class="col-10">
+                                            <input class="form-control" name="startSience" min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
                                         </div>
                                     </div>
 
@@ -58,29 +64,16 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Koniec Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="endJob"  min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${experience.endJob}"/>' type="date" placeholder="">
+                                            <input class="form-control" name="endSience" min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" max="now" placeholder="">
                                         </div>
                                     </div>
-
-
-                                    <div class="form-group row">
-                                        <label for="start" class="col-2 col-form-label">Opis Doświdczenia</label>
-                                        <div class="col-10">
-                                <textarea class="form-control" rows="5" id="start" name="descriptionExp"
-                                          value="${experience.startJob}"></textarea>
-                                        </div>
-                                    </div>
-
 
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <input class="btn btn-success pull-left" type="submit" value="Zapisz" id="searchButton"></input>
-                </form>
-                <form method="post" action='<c:url value="/deleteExperience/${experience.id}"/> '>
-                    <input class="btn btn-danger" type="submit" value="Usun">
+                    <input class="btn btn-success pull-left" type="submit" value="Wyślij" id="searchButton"></input>
                 </form>
 
 
@@ -94,3 +87,4 @@
 </body>
 
 </html>
+

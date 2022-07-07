@@ -11,9 +11,7 @@ import org.springframework.ui.Model;
 import java.util.List;
 
 
-@NoArgsConstructor
 @AllArgsConstructor
-@Getter
 @Service
 public class EducationService {
     private EducationRepository educationRepository;
