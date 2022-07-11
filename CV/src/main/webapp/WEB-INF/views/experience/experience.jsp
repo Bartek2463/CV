@@ -10,16 +10,14 @@
 <div class="container-fluid p-0">
     <section class="resume-section" id="experience">
         <div class="resume-section-content">
-            <h2 class="mb-5">Experience</h2>
             <td>
                 <a href='<c:url value="/addExperience"/> '
                    class="btn-right btn btn-info" role="button">Dodaj</a>
             </td>
+            <h2 class="mb-5">Experience</h2>
+
             <c:forEach items="${experiences}" var="title">
-                <td>
-                    <a href='<c:url value="/editExperience/${title.id}"/> '
-                       class="btn-right btn btn-primary" role="button">Edytuj</a>
-                </td>
+
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                     <div class="flex-grow-1">
                         <h3 class="mb-0">${title.jobTitle}</h3>
@@ -29,7 +27,12 @@
                     <div class="flex-shrink-0">
                         <span class="text-primary"><fmt:formatDate pattern="yyyy-MM"
                                                                    value="${title.startJob}"/> - <fmt:formatDate
-                                pattern="yyyy-MM" value="${title.endJob}"/></span></div>
+                                pattern="yyyy-MM" value="${title.endJob}"/></span>
+                        <td>
+                            <a href='<c:url value="/editExperience/${title.id}"/> '
+                               class="btn-right btn btn-primary" role="button">Edytuj</a>
+                        </td>
+                    </div>
                 </div>
             </c:forEach>
         </div>

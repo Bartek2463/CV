@@ -16,15 +16,16 @@
                    class="btn-right btn btn-info" role="button">Dodaj</a>
             </td>
             <c:forEach items="${about}" var="title">
-                <td>
-                    <a href='<c:url value="/editAbout/${title.id}"/> '
-                       class="btn-right btn btn-primary" role="button">Edytuj</a>
-                </td>
+
                 <tr>
             <h1 class="mb-0">
 
                 ${title.firstName}
                 <span class="text-primary">${title.lastName}</span>
+                    <td>
+                        <a href='<c:url value="/editAbout/${title.id}"/> '
+                           class="btn-right btn btn-primary" role="button">Edytuj</a>
+                    </td>
             </h1>
             <div class="subheading mb-5">
                 ${title.adres} · ${title.zipCode}, ${title.postOffice} · ${title.numberPhone} ·

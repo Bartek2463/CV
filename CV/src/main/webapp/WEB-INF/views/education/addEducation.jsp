@@ -16,7 +16,7 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/add"/>'>
+                <form method="post" action='<c:url value="/education/add"/>'>
                     <!-- Content Row -->
                     <select class="form-control" name="about.id">
                         <option hidden>wybierz</option>

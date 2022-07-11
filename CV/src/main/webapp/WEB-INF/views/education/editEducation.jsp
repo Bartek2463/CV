@@ -48,8 +48,9 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Data Rozpoczęcia Szkoły</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="startSience" min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${education.startSience}"/>' type="date" placeholder="">
+                                            <input class="form-control" name="startSience" value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${education.startSience}"/>' min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
 
                                         </div>
                                     </div>
@@ -58,8 +59,9 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Data Ukończenia szkoły</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="endSience" min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${education.endSience}"/>' type="date" placeholder="">
+                                            <input class="form-control" name="endSience" value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${education.endSience}"/>' min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
                                         </div>
                                     </div>
 

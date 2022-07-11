@@ -48,8 +48,9 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Początek Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="startJob" min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${experience.startJob}"/>' type="date" placeholder="">
+                                            <input class="form-control" name="startJob" value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${experience.startJob}"/>' min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
 
                                         </div>
                                     </div>
@@ -58,8 +59,9 @@
                                     <div class="form-group row">
                                         <label class="col-2 col-form-label">Koniec Daty zatrudnienia</label>
                                         <div class="col-10">
-                                            <input class="form-control" name="endJob"  min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
-         value = "${experience.endJob}"/>' type="date" placeholder="">
+                                            <input class="form-control" name="endJob" value='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${experience.endJob}"/>' min="now" max='<fmt:formatDate pattern = "yyyy-MM-dd"
+         value = "${now}"/>' type="date" placeholder="">
                                         </div>
                                     </div>
 
@@ -68,7 +70,7 @@
                                         <label for="start" class="col-2 col-form-label">Opis Doświdczenia</label>
                                         <div class="col-10">
                                 <textarea class="form-control" rows="5" id="start" name="descriptionExp"
-                                          value="${experience.startJob}"></textarea>
+                                          >${experience.descriptionExp}</textarea>
                                         </div>
                                     </div>
 
