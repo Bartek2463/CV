@@ -26,7 +26,7 @@
                         <li class="list-inline-item"><i class="fab fa-grunt"></i></li>
                         <li class="list-inline-item"><i class="fab fa-npm"></i></li>
                     </ul>
-                    <div class="subheading mb-3">Workflow</div>
+                    <div class="subheading mb-3">Type</div>
                     <ul class="fa-ul mb-0">
                         <li>
                             <span class="fa-li"><i class="fas fa-check"></i></span>
@@ -48,7 +48,7 @@
                 </div>
             </section>
             <hr class="m-0" />
-           
+
         </div>
         <!-- Bootstrap core JS-->
     <%@include file="../dynamic/javaScript.jspf"%>

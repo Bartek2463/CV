@@ -16,7 +16,7 @@ import java.util.List;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("skills")
+@RequestMapping("/skill")
 public class SkillsController {
 
     private SkillService skillService;
@@ -26,12 +26,12 @@ public class SkillsController {
     public String getSkill(Model model){
         List<About> allAbouts = aboutService.getAllAbouts();
         model.addAttribute("about",allAbouts);
-        return "skills/skills";
+        return "skills/addSkill";
     }
     @PostMapping
     public RedirectView postAddSkill(Skill skill){
         skillService.addSkill(skill);
-        return new RedirectView("/skills");
+        return new RedirectView("skills/addSkill");
     }
 
 

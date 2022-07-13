@@ -15,10 +15,10 @@ import javax.persistence.*;
 
 public class Skill {
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private  Long id;
-    @Column(name = "SKILL")
-    private String Skill;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "SKILLS")
+    private String skills;
     @Column(name = "TYPE")
     private String type;
     @Column(name = "SCALE")
