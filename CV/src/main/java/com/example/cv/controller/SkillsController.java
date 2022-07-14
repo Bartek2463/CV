@@ -39,12 +39,12 @@ public class SkillsController {
     @GetMapping
     public String getSkills(Model model) {
         List<Skill> skills = skillService.getSkills();
-        model.addAttribute("skillList", skills);
+        model.addAttribute("skill", skills);
         return "skills/skills";
     }
 
     @PostMapping("/{id}")
-    public RedirectView putEditSkill(@RequestBody Skill skill,@PathVariable Long id){
+    public RedirectView putEditSkill(@Valid Skill skill,@PathVariable Long id){
         skillService.editSkill(skill);
         return  new RedirectView("/skill");
     }
@@ -52,13 +52,13 @@ public class SkillsController {
     @GetMapping("/{id}")
     public String getEditSkill(@PathVariable Long id,Model model){
         Skill skillById = skillService.getSkillById(id);
-        model.addAttribute("skillByid",skillById);
+        model.addAttribute("skill",skillById);
         return "skills/editSkill";
     }
 
 
     @PostMapping("/delete/{id}")
-    public RedirectView editSkill(@PathVariable Long id){
+    public RedirectView editSkill( @PathVariable  Long id){
         skillService.deleteSkillByid(id);
         return new RedirectView("/skill");
     }

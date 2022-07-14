@@ -16,7 +16,7 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="skill/${skill.id}"/>'>
+                <form method="post" action='<c:url value="${skill.id}"/>'>
 
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
@@ -26,7 +26,7 @@
                                         <label class="col-2 col-form-label">Rodzaj umiejetności</label>
                                         <div class="col-10">
                                             <input class="form-control" type="text" name="type"
-                                                   value="${skillByid.type}">
+                                                   value="${skill.type}">
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                     </div>
                     <input class="btn btn-success pull-left" type="submit" value="Zapisz" id="searchButton"></input>
                 </form>
-                <form method="post" action='<c:url value="skill/delete/${skill.id}"/> '>
+                <form method="post" action='<c:url value="/skill/delete/${skill.id}"/> '>
                     <input class="btn btn-danger" type="submit" value="Usun">
                 </form>
 

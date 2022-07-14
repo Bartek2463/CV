@@ -16,7 +16,7 @@
                 <h2 class="mb-5">Skill</h2>
 
 
-                <c:forEach items="${skillList}" var="title">
+                <c:forEach items="${skill}" var="title">
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
