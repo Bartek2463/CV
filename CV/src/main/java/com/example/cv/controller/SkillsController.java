@@ -22,16 +22,24 @@ public class SkillsController {
     private SkillService skillService;
     private AboutService aboutService;
 
-    @GetMapping
-    public String getSkill(Model model){
+    @GetMapping("/add")
+    public String getSkill(Model model) {
         List<About> allAbouts = aboutService.getAllAbouts();
-        model.addAttribute("about",allAbouts);
+        model.addAttribute("about", allAbouts);
         return "skills/addSkill";
     }
-    @PostMapping
-    public RedirectView postAddSkill(Skill skill){
+
+    @PostMapping("/add")
+    public RedirectView postAddSkill(Skill skill) {
         skillService.addSkill(skill);
-        return new RedirectView("skills/addSkill");
+        return new RedirectView("/skill");
+    }
+
+    @GetMapping
+    public String getSkills(Model model){
+        List<Skill> skills = skillService.getSkills();
+        model.addAttribute("skillList",skills);
+        return "skills/skills";
     }
 
 

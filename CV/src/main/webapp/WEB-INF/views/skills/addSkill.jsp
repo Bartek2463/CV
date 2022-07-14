@@ -16,7 +16,7 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/skill"/>'>
+                <form method="post" action='<c:url value="/skill/add"/>'>
                     <!-- Content Row -->
                     <select class="form-control" name="about.id">
                         <option hidden>wybierz</option>
@@ -24,32 +24,18 @@
                             <option value="${title.id}">${title.firstName} ${title.lastName}</option>
                         </c:forEach>
                     </select>
-
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <div class="form-group row">
-                                        <label class="col-2 col-form-label">Umiejetnosc</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="text" name="skills"
-                                                   placeholder="uzupełnij umiejetność">
-                                        </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Typ umiejetnosci</label>
+                                        <label class="col-2 col-form-label">Rodzaj umiejetnosci</label>
                                         <div class="col-10">
                                             <input class="form-control" type="text" name="type"
-                                                   placeholder="uzupełnij nazwę kierunku">
+                                                   placeholder="Podaj rodzaj umiejetności">
                                         </div>
-                                    </div>
 
-                                    <div class="form-group row">
-                                        <label class="col-2 col-form-label">Scale</label>
-                                        <div class="col-10">
-                                            <input class="form-control" type="number" name="scale"
-                                                   placeholder="Dodaj Skale umiejetnosci ">
-                                        </div>
                                     </div>
                                 </div>
                             </div>

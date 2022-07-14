@@ -6,26 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+public class SpecificSkill {
 
-public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "TYPE")
-    private String type;
+    @Column(name = "SKILL_FOR_TYPE")
+    private String skillForType;
+    @Column(name = "SCALE")
+    private Integer scale;
     @ManyToOne
-    private About about;
-
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH,mappedBy = "skill")
-    private Set<SpecificSkill> skillsList = new HashSet<>();
-
-
+    private Skill skill;
 }
