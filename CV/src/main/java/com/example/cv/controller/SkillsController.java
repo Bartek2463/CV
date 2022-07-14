@@ -23,6 +23,8 @@ public class SkillsController {
     private SkillService skillService;
     private AboutService aboutService;
 
+    private SpecificSkillServices specificSkillServices;
+
     @GetMapping("/add")
     public String getSkill(Model model) {
         List<About> allAbouts = aboutService.getAllAbouts();
@@ -62,6 +64,4 @@ public class SkillsController {
         skillService.deleteSkillByid(id);
         return new RedirectView("/skill");
     }
-
-
 }

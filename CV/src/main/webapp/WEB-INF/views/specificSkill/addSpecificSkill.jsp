@@ -16,11 +16,11 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/skill/add"/>'>
+                <form method="post" action='<c:url value="/skill/addSkill"/>'>
                     <!-- Content Row -->
                     <select class="form-control" name="skill.id">
                         <option hidden>wybierz</option>
-                        <c:forEach items="${skills}" var="skills">
+                        <c:forEach items="${skill}" var="skills">
                             <option value="${skills.id}">${skills.type}</option>
                         </c:forEach>
                     </select>
@@ -31,12 +31,18 @@
                                 <div class="card-header py-3">
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-2 col-form-label">Rodzaj umiejetnosci</label>
+                                    <label class="col-2 col-form-label">Umiejetnosci</label>
                                     <div class="col-10">
-                                        <input class="form-control" type="text" name="type"
-                                               placeholder="Podaj rodzaj umiejetności">
+                                        <input class="form-control" type="text" name="skillForType"
+                                               placeholder="Podaj  umiejetnosc">
                                     </div>
-
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-2 col-form-label">Skala</label>
+                                    <div class="col-10">
+                                        <input class="form-control" type="text" name="scale"
+                                               placeholder="Podaj poziom">
+                                    </div>
                                 </div>
                             </div>
                         </div>
