@@ -21,15 +21,6 @@
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
                             <h3 class="mb-0">${title.type}</h3>
-
-                            <div class="subheading mb-3">
-                                <ul class="fa-ul mb-0">
-                                    <li>
-                                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                                        ${title.skills}:  (${title.scale})
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                         <div class="flex-shrink-0">
                             <td>
