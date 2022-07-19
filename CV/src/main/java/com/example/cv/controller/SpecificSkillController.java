@@ -34,5 +34,4 @@ public class SpecificSkillController {
         specificSkillServices.addSpecificSkill(specificSkill);
     return  new RedirectView("/skill");
     }
-
 }

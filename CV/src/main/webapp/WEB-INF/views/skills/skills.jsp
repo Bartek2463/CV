@@ -28,21 +28,8 @@
                         <div class="flex-grow-1">
 
                             <h3 class="mb-0">${title.type}</h3>
-                            <c:forEach items="skill" var="skill">
-                                <section class="resume-section" id="skills">
-                                    <div class="resume-section-content">
-                                        <div class="subheading mb-3">Workflow</div>
-                                        <ul class="fa-ul mb-0">
-                                            <li>
-                                                <span class="fa-li"><i class="fas fa-check"></i></span>
-                                               ${skill.skillForType}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </section>
-                            </c:forEach>
-
                         </div>
+
 
                         <div class="flex-shrink-0">
                             <td>
