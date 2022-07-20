@@ -28,7 +28,17 @@
                                             <input class="form-control" type="text" name="type"
                                                    value="${skill.type}">
                                         </div>
+
                                     </div>
+                                    <div class="form-group row">
+                                        <label for="start" class="col-2 col-form-label">Umiejetnosci</label>
+                                        <div class="col-10">
+                                            <textarea class="form-control" rows="5" id="start" name="skills"
+                                                      rows="5">${skill.skills}</textarea>
+
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

@@ -79,7 +79,7 @@
                                     <div class="form-group row">
                                         <label for="start" class="col-2 col-form-label">Cos o sobie :</label>
                                         <div class="col-10">
-                                <textarea class="form-control" rows="5" id="start" name="aboutPerson"
+                                            <textarea class="form-control" rows="5" id="start" name="aboutPerson"
                                           rows="5">${about.aboutPerson}</textarea>
 
                                         </div>

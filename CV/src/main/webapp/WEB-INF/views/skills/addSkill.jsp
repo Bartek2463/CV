@@ -37,10 +37,16 @@
                                         </div>
 
                                     </div>
+                                <div class="form-group row">
+                                    <label for="start" class="col-2 col-form-label">Umiejetności</label>
+                                    <div class="col-10">
+                                <textarea class="form-control" rows="5" id="start" name="skills"
+                                          placeholder="podaj swoje umiejetności"></textarea>
+                                    </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <input class="btn btn-success pull-left" type="submit" value="Wyślij" id="searchButton"></input>
                 </form>
 
