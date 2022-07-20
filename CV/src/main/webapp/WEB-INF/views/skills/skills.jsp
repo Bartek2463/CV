@@ -11,11 +11,7 @@
             <div class="resume-section-content">
                 <td>
                     <a href='<c:url value="/skill/add"/> '
-                       class="btn-right btn btn-info" role="button">Dodaj Rodzaj</a>
-                </td>
-                <td>
-                    <a href='<c:url value="/skill/addSkill"/> '
-                       class="btn-right btn btn-info" role="button">Dodaj Umiejetnosc</a>
+                       class="btn-right btn btn-info" role="button">Dodaj Umiejetność</a>
                 </td>
                 <h2 class="mb-5">Skill</h2>
 
@@ -25,10 +21,10 @@
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
 
-                        <div class="flex-grow-1">
+<%--                        <div class="flex-grow-1">--%>
 
-                            <h3 class="mb-0">${title.type}</h3>
-                        </div>
+<%--                            <h3 class="mb-0">${title.type}</h3>--%>
+<%--                        </div>--%>
 
 
                         <div class="flex-shrink-0">

@@ -2,10 +2,8 @@ package com.example.cv.controller;
 
 import com.example.cv.model.About;
 import com.example.cv.model.Skill;
-import com.example.cv.model.SpecificSkill;
 import com.example.cv.service.AboutService;
 import com.example.cv.service.SkillService;
-import com.example.cv.service.SpecificSkillServices;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +20,6 @@ public class SkillsController {
 
     private SkillService skillService;
     private AboutService aboutService;
-
-    private SpecificSkillServices specificSkillServices;
 
     @GetMapping("/add")
     public String getSkill(Model model) {
