@@ -16,38 +16,37 @@
         <div id="content">
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action='<c:url value="/skill/add"/>'>
-                    <!-- Content Row -->
-                    <select class="form-control" name="about.id">
-                        <option hidden>wybierz</option>
-                        <c:forEach items="${about}" var="title">
-                            <option value="${title.id}">${title.firstName} ${title.lastName}</option>
-                        </c:forEach>
-                    </select>
+                <form method="post" action='<c:url value="${skill.id}"/>'>
+
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    </div>
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Rodzaj umiejetnosci</label>
+                                        <label class="col-2 col-form-label">Rodzaj umiejetności</label>
                                         <div class="col-10">
                                             <input class="form-control" type="text" name="type"
-                                                   placeholder="Podaj rodzaj umiejetności">
+                                                   value="${skill.type}">
                                         </div>
 
                                     </div>
-                                <div class="form-group row">
-                                    <label for="start" class="col-2 col-form-label">Umiejetności</label>
-                                    <div class="col-10">
-                                <textarea class="form-control" rows="5" id="start" name="skills"
-                                          placeholder="podaj swoje umiejetności"></textarea>
+                                    <div class="form-group row">
+                                        <label for="start" class="col-2 col-form-label">Umiejetnosci</label>
+                                        <div class="col-10">
+                                            <textarea class="form-control" rows="5" id="start" name="skills"
+                                                      rows="5">${skill.skills}</textarea>
+
+                                        </div>
                                     </div>
-                                </div>
+
                                 </div>
                             </div>
                         </div>
-                    <input class="btn btn-success pull-left" type="submit" value="Wyślij" id="searchButton"></input>
+                    </div>
+                    <input class="btn btn-success pull-left" type="submit" value="Zapisz" id="searchButton"></input>
+                </form>
+                <form method="post" action='<c:url value="/skill/delete/${skill.id}"/> '>
+                    <input class="btn btn-danger" type="submit" value="Usun">
                 </form>
 
 

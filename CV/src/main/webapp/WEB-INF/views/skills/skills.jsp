@@ -11,31 +11,32 @@
             <div class="resume-section-content">
                 <td>
                     <a href='<c:url value="/skill/add"/> '
-                       class="btn-right btn btn-info" role="button">Dodaj</a>
+                       class="btn-right btn btn-info" role="button">Dodaj Umiejetność</a>
                 </td>
                 <h2 class="mb-5">Skill</h2>
 
 
-                <c:forEach items="${skillList}" var="title">
+                <c:forEach items="${skill}" var="title">
+
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">${title.type}</h3>
 
-                            <div class="subheading mb-3">
-                                <ul class="fa-ul mb-0">
-                                    <li>
-                                        <span class="fa-li"><i class="fas fa-check"></i></span>
-                                        ${title.skills}:  (${title.scale})
-                                    </li>
-                                </ul>
-                            </div>
+                        <div class="flex-grow-1">
+
+                            <h3 class="mb-0">${title.type}</h3>
+                            <ul class="fa-ul mb-0">
+                                <li>
+                                    <span class="fa-li"><i class="fas fa-check"></i></span>
+                                    ${title.skills}
+                                </li>
+                            </ul>
                         </div>
                         <div class="flex-shrink-0">
                             <td>
                                 <a href='<c:url value="/skill/${title.id}"/> '
                                    class="btn-right btn btn-primary" role="button">Edytuj</a>
                             </td>
+
                         </div>
                     </div>
                 </c:forEach>

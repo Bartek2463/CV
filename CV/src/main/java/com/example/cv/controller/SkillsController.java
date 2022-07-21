@@ -7,11 +7,10 @@ import com.example.cv.service.SkillService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -36,11 +35,29 @@ public class SkillsController {
     }
 
     @GetMapping
-    public String getSkills(Model model){
+    public String getSkills(Model model) {
         List<Skill> skills = skillService.getSkills();
-        model.addAttribute("skillList",skills);
+        model.addAttribute("skill", skills);
         return "skills/skills";
     }
 
+    @PostMapping("/{id}")
+    public RedirectView putEditSkill(@Valid Skill skill,@PathVariable Long id){
+        skillService.editSkill(skill);
+        return  new RedirectView("/skill");
+    }
 
+    @GetMapping("/{id}")
+    public String getEditSkill(@PathVariable Long id,Model model){
+        Skill skillById = skillService.getSkillById(id);
+        model.addAttribute("skill",skillById);
+        return "skills/editSkill";
+    }
+
+
+    @PostMapping("/delete/{id}")
+    public RedirectView editSkill( @PathVariable  Long id){
+        skillService.deleteSkillByid(id);
+        return new RedirectView("/skill");
+    }
 }

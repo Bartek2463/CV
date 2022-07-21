@@ -21,11 +21,10 @@ public class Skill {
     private Long id;
     @Column(name = "TYPE")
     private String type;
+    @Column(name = "SKILLS")
+    private String skills;
     @ManyToOne
     private About about;
-
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH,mappedBy = "skill")
-    private Set<SpecificSkill> skillsList = new HashSet<>();
 
 
 }
