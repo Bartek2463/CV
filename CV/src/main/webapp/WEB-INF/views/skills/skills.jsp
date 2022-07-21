@@ -21,17 +21,22 @@
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
 
-<%--                        <div class="flex-grow-1">--%>
+                        <div class="flex-grow-1">
 
-<%--                            <h3 class="mb-0">${title.type}</h3>--%>
-<%--                        </div>--%>
-
-
+                            <h3 class="mb-0">${title.type}</h3>
+                            <ul class="fa-ul mb-0">
+                                <li>
+                                    <span class="fa-li"><i class="fas fa-check"></i></span>
+                                    ${title.skills}
+                                </li>
+                            </ul>
+                        </div>
                         <div class="flex-shrink-0">
                             <td>
                                 <a href='<c:url value="/skill/${title.id}"/> '
                                    class="btn-right btn btn-primary" role="button">Edytuj</a>
                             </td>
+
                         </div>
                     </div>
                 </c:forEach>
