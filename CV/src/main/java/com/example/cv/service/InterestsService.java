@@ -17,8 +17,8 @@ public class InterestsService {
     public void addInterest(Interests interests){
     interestsRepository.save(interests);
     }
-    public List<Interests> interestsList (){
-      return   interestsRepository.findAll();
+    public List<Interests> interest (){
+      return  interestsRepository.findAll();
     }
 
     public Interests getInterestByid(Long id){

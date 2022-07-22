@@ -12,8 +12,7 @@
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/experience"/> '>Experience</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/education"/> '>Education</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/skill"/> '>Skills</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="interests">Interests</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="awards">Awards</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/interests"/>'>Interests</a></li>
 
         </ul>
     </div>
