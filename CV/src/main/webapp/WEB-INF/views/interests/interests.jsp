@@ -11,11 +11,34 @@
     <!-- Interests-->
     <section class="resume-section" id="interests">
         <div class="resume-section-content">
+            <td>
+                <a href='<c:url value="/interests/add"/> '
+                   class="btn-right btn btn-info" role="button">Dodaj Zainteresowania</a>
+
+            </td>
             <h2 class="mb-5">Interests</h2>
-            <p>${interests.descInterests}</p>
-            <p class="mb-0">When forced indoors, I follow a number of sci-fi and fantasy genre movies and television
-                shows, I am an aspiring chef, and I spend a large amount of my free time exploring the latest technology
-                advancements in the front-end web development world.</p>
+            <c:forEach items="${interest}" var="title">
+
+
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+
+                    <div class="flex-grow-1">
+
+
+                                <span class="fa-li"><i class="fas fa-check"></i></span>
+                                    ${title.interest}
+
+                    </div>
+                    <div class="flex-shrink-0">
+                        <td>
+                            <a href='<c:url value="/interests/${title.id}"/> '
+                               class="btn-right btn btn-primary" role="button">Edytuj</a>
+                        </td>
+
+                    </div>
+                </div>
+            </c:forEach>
+
         </div>
     </section>
     <hr class="m-0"/>
