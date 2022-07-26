@@ -2,6 +2,8 @@ package com.example.cv.controller;
 
 import com.example.cv.model.About;
 import com.example.cv.service.AboutService;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,47 +15,46 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class AboutController {
 
     private AboutService aboutService;
 
-    public AboutController(AboutService aboutService) {
-        this.aboutService = aboutService;
-    }
-
     @GetMapping("/about")
-    public String getAbout(Model model){
+    public String getAbout(Model model) {
         List<About> allAbouts = aboutService.getAllAbouts();
-        model.addAttribute("about",allAbouts);
+        model.addAttribute("about", allAbouts);
         return "about/about";
     }
+
     @GetMapping("/addAbout")
-    public String getAddaAbout(){
+    public String getAddaAbout() {
         return "about/addAbout";
     }
+
     @PostMapping("/addAbout")
-    public RedirectView postAddAbout(@Valid About about){
+    public RedirectView postAddAbout(@Valid About about) {
         aboutService.adAbout(about);
         return new RedirectView("/about");
     }
 
     @GetMapping("/editAbout/{id}")
-    public String getEditAbout(@PathVariable Long id, Model model){
+    public String getEditAbout(@PathVariable Long id, Model model) {
         About aboutByid = aboutService.getAboutByid(id);
-        model.addAttribute("about",aboutByid);
+        model.addAttribute("about", aboutByid);
         return "about/editAbout";
     }
 
     @PostMapping("/editAbout/{id}")
-    public RedirectView postEditAbout(@Valid About about,@PathVariable Long id){
+    public RedirectView postEditAbout(@Valid About about) {
         aboutService.editAbout(about);
-        return  new RedirectView("/about");
+        return new RedirectView("/about");
     }
 
     @PostMapping("/delete/{id}")
-    public  RedirectView postDeleteAbout(@PathVariable Long id){
+    public RedirectView postDeleteAbout(@PathVariable Long id) {
         aboutService.deleteAbout(id);
-        return  new RedirectView("/about");
+        return new RedirectView("/about");
     }
 
 }

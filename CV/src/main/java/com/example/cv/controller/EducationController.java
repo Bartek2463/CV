@@ -17,6 +17,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
 import java.util.List;
+
 @AllArgsConstructor
 @Controller
 @RequestMapping("/education")
@@ -39,7 +40,6 @@ public class EducationController {
         return "education/addEducation";
     }
 
-
     @GetMapping("/{id}")
     public String getEducationById(@PathVariable Long id, Model model) {
         Education educationById = educationService.getEducationById(id);
@@ -48,14 +48,13 @@ public class EducationController {
     }
 
     @PostMapping("/add")
-    public RedirectView addPostEducation(Education education) {
+    public RedirectView addPostEducation(@Valid Education education) {
         educationService.addEducation(education);
         return new RedirectView("/education");
     }
 
-
     @PostMapping("/edit/{id}")
-    public RedirectView editEducation(@Valid Education education,@PathVariable Long id) {
+    public RedirectView editEducation(@Valid Education education) {
         educationService.editEducation(education);
         return new RedirectView("/education");
     }
@@ -65,6 +64,4 @@ public class EducationController {
         educationService.deleteEducation(id);
         return new RedirectView("/education");
     }
-
-
 }
