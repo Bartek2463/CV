@@ -29,7 +29,7 @@ public class SkillsController {
     }
 
     @PostMapping("/add")
-    public RedirectView postAddSkill(Skill skill) {
+    public RedirectView postAddSkill(@Valid Skill skill) {
         skillService.addSkill(skill);
         return new RedirectView("/skill");
     }
@@ -42,7 +42,7 @@ public class SkillsController {
     }
 
     @PostMapping("/{id}")
-    public RedirectView putEditSkill(@Valid Skill skill,@PathVariable Long id){
+    public RedirectView putEditSkill(@Valid Skill skill){
         skillService.editSkill(skill);
         return  new RedirectView("/skill");
     }
@@ -53,7 +53,6 @@ public class SkillsController {
         model.addAttribute("skill",skillById);
         return "skills/editSkill";
     }
-
 
     @PostMapping("/delete/{id}")
     public RedirectView deleteSkill( @PathVariable  Long id){

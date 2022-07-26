@@ -4,6 +4,7 @@ import com.example.cv.model.About;
 import com.example.cv.model.Experience;
 import com.example.cv.service.AboutService;
 import com.example.cv.service.ExperienceService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,16 +16,11 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
+@AllArgsConstructor
 public class ExperienceController {
 
     private ExperienceService experienceService;
     private AboutService aboutService;
-
-
-    public ExperienceController(ExperienceService experienceService, AboutService aboutService) {
-        this.experienceService = experienceService;
-        this.aboutService = aboutService;
-    }
 
     @GetMapping("/experience")
     String getExpirence(Model model) {
@@ -32,7 +28,6 @@ public class ExperienceController {
         model.addAttribute("experiences", expirences);
         return "experience/experience";
     }
-
 
     @GetMapping("/addExperience")
     String getAddExperience(Model model) {
@@ -42,7 +37,7 @@ public class ExperienceController {
     }
 
     @PostMapping("/addExperience")
-    public RedirectView postAddExperience(Experience experience) {
+    public RedirectView postAddExperience(@Valid Experience experience) {
         experienceService.addExpirence(experience);
         return new RedirectView("/experience");
     }
@@ -55,7 +50,7 @@ public class ExperienceController {
     }
 
     @PostMapping("/editExperience/{id}")
-    public RedirectView postEditExperience(@Valid Experience experience, @PathVariable Long id) {
+    public RedirectView postEditExperience(@Valid Experience experience) {
         experienceService.editExperience(experience);
         return new RedirectView("/experience");
     }
