@@ -20,29 +20,28 @@ public class About {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotEmpty
-    @Min(2)
-    @Max(30)
+    @Size(min = 2, max = 40)
     @Column(name = "FISRT_NAME")
     private String firstName;
     @NotEmpty
-    @Min(2)
-    @Max(30)
+    @Size(min = 2, max = 40)
     @Column(name = "LAST_NAME")
     private String lastName;
     @NotEmpty
-    @Min(2)
-    @Max(40)
+    @Size(min = 2, max = 50)
     @Column(name = "ADRES")
     private String adres;
-    @Column(name = "ZIP_CODE")
-    private Integer zipCode;
     @NotEmpty
-    @Min(2)
-    @Max(40)
+    @Pattern(regexp ="[0-9]{2}-[0-9]{3}")
+    @Column(name = "ZIP_CODE")
+    private String zipCode;
     @Column(name = "POST_OFFICE")
+    @NotEmpty
     private String postOffice;
+    @NotEmpty
+    @Pattern(regexp = "[0-9]{9}")
     @Column(name = "NUMBER_PHONE")
-    private Integer numberPhone;
+    private String numberPhone;
     @Email
     private String adresEmail;
     @NotEmpty
