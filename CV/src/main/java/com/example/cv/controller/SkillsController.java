@@ -56,7 +56,7 @@ public class SkillsController {
 
 
     @PostMapping("/delete/{id}")
-    public RedirectView editSkill( @PathVariable  Long id){
+    public RedirectView deleteSkill( @PathVariable  Long id){
         skillService.deleteSkillByid(id);
         return new RedirectView("/skill");
     }
