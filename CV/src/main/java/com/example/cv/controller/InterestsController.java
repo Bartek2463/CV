@@ -35,20 +35,17 @@ public class InterestsController {
         model.addAttribute("interest",interest);
         return "interests/interests";
     }
-
     @PostMapping
-    public RedirectView postInterests (Interests interests){
+    public RedirectView postInterests (@Valid Interests interests){
         interestsService.addInterest(interests);
         return new RedirectView("/interests");
     }
-
     @GetMapping("/{id}")
     public String getEditInterests(@PathVariable Long id,Model model){
         Interests interestByid = interestsService.getInterestByid(id);
         model.addAttribute("interestId",interestByid);
         return "interests/editInterest";
     }
-
     @PostMapping("/{id}")
     public  RedirectView editInterests(@Valid Interests interests){
         interestsService.editInterest(interests);
@@ -59,8 +56,4 @@ public class InterestsController {
         interestsService.deleteInterestByid(id);
         return new RedirectView("/interests");
     }
-
-
-
-
 }
