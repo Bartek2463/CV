@@ -44,6 +44,10 @@ public class About {
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH,mappedBy = "about")
     private Set<Skill> skills = new HashSet<>();
 
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REFRESH,mappedBy = "about")
+    private Set<Interests> interests = new HashSet<>();
+
+
 
 
 
