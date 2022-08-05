@@ -1,7 +1,11 @@
 package com.example.cv.controller;
 
-import static org.junit.jupiter.api.Assertions.*;
+import com.example.cv.CvApplication;
+import org.springframework.boot.test.context.SpringBootTest;
 
-class EducationControllerTest {
+import static org.junit.jupiter.api.Assertions.*;
+@SpringBootTest
+class EducationControllerTest extends CvApplicationTest {
+
 
 }
