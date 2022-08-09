@@ -7,10 +7,9 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class CvApplicationTests {
+ public  class CvApplicationTests {
 
     @Autowired
     protected MockMvc mockMvc;
-
 
 }
